@@ -1,25 +1,14 @@
-const btn = document.querySelector('#clicker');
+const btn = document.querySelector('button');
 
-// btn.onclick = function() {
-//     console.log('You clicked me');
-// }
-
-// btn.ondblclick = function() {
-//     console.log('You clicked me twice');
-// }
+btn.addEventListener('mouseover', function() {
+    console.log('MOUSED ME OVER!');
+    const height = Math.floor(Math.random() * window.innerHeight);
+    const width = Math.floor(Math.random() * window.innerWidth);
+    btn.style.top = `${width}px`;
+    btn.style.left = `${height}px`;
+});
 
 btn.addEventListener('click', function() {
-    alert('CLICKED ME');
-})
-
-btn.addEventListener('mouseover', function(){
-    btn.innerText = 'Stop TOUCHING ME';
-})
-
-btn.addEventListener('mouseout', function(){
-    btn.innerText = 'Clicker';
-})
-
-window.addEventListener('scroll', function(){
-    console.log('STOP SCROLLING');
-})
+    btn.innerText = 'YOU GOT ME!';
+    document.body.style.backgroundColor = 'green';
+});
